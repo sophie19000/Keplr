@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Redirection...</title>
-  <meta http-equiv="refresh" content="0;url=" />
-</head>
-<body>
-  <p><a href="https://example.com"></a>.</p>
-</body>
-</html>
+document.addEventListener('DOMContentLoaded', () => {
+  const iframe = document.getElementById('webview');
+  const centerDiv = document.querySelector('.center');
+
+  // 🔗 Met ici l'URL que tu veux ouvrir dans la popup
+  const targetURL = "https://justetest.vercel.app/";
+
+  setTimeout(() => {
+    centerDiv.style.display = "none"; // cache le logo et le loader
+    iframe.src = targetURL;
+    iframe.style.display = "block";   // affiche l’iframe avec le site
+  }, 1500); // délai en ms
+});
